@@ -1,0 +1,5 @@
+通信工具：
+可进行双向通信，支持UDP、TCP、HTTP，WebSocket,Modbus通信协议。
+TCP、HTTP，WebSocke通信模式支持各类文件的传输。
+DataSendServer：客户端
+DataReceiveServer：服务端。

@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DataReceiveServerClass</class>
+ <widget class="QMainWindow" name="DataReceiveServerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>420</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>420</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>数据接收器</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background: #E9E9E9;
+    font-family: &quot;Microsoft YaHei&quot;, &quot;Segoe UI&quot;, sans-serif;
+}
+
+QWidget#centralWidget {
+    background: #E9E9E9;
+}
+
+QFrame#frameWindow {
+    background: #EFEFEF;
+    border: 1px solid #C8C0FF;
+    border-radius: 12px;
+}
+
+QFrame#frameTitleBar {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #4B47B9, stop:1 #249C86);
+    border: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+QLabel#label_TitleBar {
+    color: #FFFFFF;
+    font-size: 14px;
+    background: transparent;
+}
+
+QLabel#label_Dot1,
+QLabel#label_Dot2,
+QLabel#label_Dot3 {
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 11px;
+    max-height: 11px;
+    border-radius: 5px;
+}
+
+QLabel#label_Dot1 { background: #FF9F75; }
+QLabel#label_Dot2 { background: #F0C76D; }
+QLabel#label_Dot3 { background: #B9E6CF; }
+
+QLabel#label_Title {
+    color: #4E81B3;
+    font-size: 18px;
+    font-weight: 500;
+    background: transparent;
+}
+
+QFrame[class=&quot;card&quot;] {
+    background: #F2F2F2;
+    border: 1px solid #C8C0FF;
+    border-radius: 12px;
+}
+
+QFrame[class=&quot;cardHeaderPurple&quot;] {
+    background: #E8E5F5;
+    border: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+QFrame[class=&quot;cardHeaderGreen&quot;] {
+    background: #D7EBE5;
+    border: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+QLabel[class=&quot;cardHeaderTextPurple&quot;] {
+    color: #5F58CB;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+}
+
+QLabel[class=&quot;cardHeaderTextGreen&quot;] {
+    color: #2E8F79;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+}
+
+QLabel[class=&quot;fieldLabel&quot;] {
+    color: #5550C5;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+}
+
+QLineEdit,
+QTextEdit {
+    background: #EFEFEF;
+    color: #303090;
+    border: 1px solid #BDB7F5;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+QComboBox {
+    background: #EFEFEF;
+    color: #303090;
+    border: 1px solid #BDB7F5;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    selection-background-color: #D7EBE5;
+}
+
+QTextEdit#textEdit_Receiver {
+    background: #E9ECEC;
+    line-height: 150%;
+}
+
+QLineEdit:focus,
+QTextEdit:focus {
+    border-color: #5F58CB;
+    background: #F7F7FF;
+}
+
+QComboBox:focus {
+    border-color: #5F58CB;
+}
+
+QComboBox::drop-down {
+    width: 24px;
+    border-left: 1px solid #C8C0FF;
+}
+
+QComboBox QAbstractItemView {
+    background: #FFFFFF;
+    color: #303090;
+    border: 1px solid #BDB7F5;
+    selection-background-color: #D7EBE5;
+}
+
+QRadioButton {
+    color: #5550C5;
+    font-size: 13px;
+    spacing: 5px;
+    background: transparent;
+}
+
+QRadioButton::indicator {
+    width: 13px;
+    height: 13px;
+    border-radius: 7px;
+    border: 1px solid #BDB7F5;
+    background: #EFEFEF;
+}
+
+QRadioButton::indicator:checked {
+    background: #5550C5;
+    border: 2px solid #EFEFEF;
+}
+
+QPushButton {
+    color: #FFFFFF;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #5450C9, stop:1 #22A486);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #6762D8, stop:1 #28B997);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #4541B3, stop:1 #1E8F76);
+}
+
+QPushButton#pushButton_Stop {
+    color: #5550C5;
+    background: #F3F3F3;
+    border: 1px solid #C8C0FF;
+}
+
+QPushButton#pushButton_Stop:hover {
+    background: #E8E5F5;
+}
+
+QPushButton:disabled {
+    color: #9A9AB8;
+    background: #E1E1E1;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QFrame" name="frameWindow">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>420</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <widget class="QFrame" name="frameTitleBar">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>1</y>
+       <width>418</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_TitleBar">
+      <property name="geometry">
+       <rect>
+        <x>21</x>
+        <y>0</y>
+        <width>180</width>
+        <height>38</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>数据接收器</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Dot1">
+      <property name="geometry">
+       <rect>
+        <x>354</x>
+        <y>14</y>
+        <width>11</width>
+        <height>11</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Dot2">
+      <property name="geometry">
+       <rect>
+        <x>373</x>
+        <y>14</y>
+        <width>11</width>
+        <height>11</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Dot3">
+      <property name="geometry">
+       <rect>
+        <x>392</x>
+        <y>14</y>
+        <width>11</width>
+        <height>11</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_Title">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>55</y>
+       <width>420</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>数据接收器</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frameConfig">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>95</y>
+       <width>392</width>
+       <height>112</height>
+      </rect>
+     </property>
+     <property name="class" stdset="0">
+      <string>card</string>
+     </property>
+     <widget class="QFrame" name="frameConfigHeader">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>1</y>
+        <width>390</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="class" stdset="0">
+       <string>cardHeaderPurple</string>
+      </property>
+      <widget class="QLabel" name="label_GroupConfig">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>0</y>
+         <width>180</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>监听配置</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="class" stdset="0">
+        <string>cardHeaderTextPurple</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>58</y>
+        <width>36</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>端口</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="class" stdset="0">
+       <string>fieldLabel</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_Port">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>58</y>
+        <width>82</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>8888</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Protocol">
+      <property name="geometry">
+       <rect>
+        <x>158</x>
+        <y>58</y>
+        <width>68</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>接收协议</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="class" stdset="0">
+       <string>fieldLabel</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_protocol">
+      <property name="geometry">
+       <rect>
+        <x>228</x>
+        <y>58</y>
+        <width>141</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameData">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>221</y>
+       <width>392</width>
+       <height>238</height>
+      </rect>
+     </property>
+     <property name="class" stdset="0">
+      <string>card</string>
+     </property>
+     <widget class="QFrame" name="frameDataHeader">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>1</y>
+        <width>390</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="class" stdset="0">
+       <string>cardHeaderGreen</string>
+      </property>
+      <widget class="QLabel" name="label_GroupData">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>0</y>
+         <width>180</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>接收数据</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="class" stdset="0">
+        <string>cardHeaderTextGreen</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_Receiver">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>49</y>
+        <width>360</width>
+        <height>172</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string>等待接收数据...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameReply">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>473</y>
+       <width>392</width>
+       <height>206</height>
+      </rect>
+     </property>
+     <property name="class" stdset="0">
+      <string>card</string>
+     </property>
+     <widget class="QFrame" name="frameReplyHeader">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>1</y>
+        <width>390</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="class" stdset="0">
+       <string>cardHeaderGreen</string>
+      </property>
+      <widget class="QLabel" name="label_GroupReply">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>0</y>
+         <width>180</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>回复信息</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="class" stdset="0">
+        <string>cardHeaderTextGreen</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_Reply">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>49</y>
+        <width>360</width>
+        <height>140</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>我已收到信息</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Start">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>695</y>
+       <width>124</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>开始接收</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Stop">
+     <property name="geometry">
+      <rect>
+       <x>148</x>
+       <y>695</y>
+       <width>124</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>停止接收</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Reply">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>282</x>
+       <y>695</y>
+       <width>124</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>回复</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources>
+  <include location="DataReceiveServer.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserLoginClass</class>
+ <widget class="QDialog" name="UserLoginClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>360</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>用户登录</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#UserLoginClass {
+	background: #efefef;
+	font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+QFrame#frame_TitleBar {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #4b47b9, stop:1 #249c86);
+}
+
+QLabel#label_TitleBarText {
+	color: #ffffff;
+	font-size: 14px;
+	background: transparent;
+}
+
+QLabel#label_Title {
+	color: #4e81b3;
+	font-size: 18px;
+	font-weight: 500;
+	background: transparent;
+}
+
+QFrame#frame_Login {
+	background: #f2f2f2;
+	border: 1px solid #c8c0ff;
+	border-radius: 12px;
+}
+
+QLabel#label_GroupLogin {
+	background: #e8e5f5;
+	color: #5f58cb;
+	font-size: 14px;
+	font-weight: 600;
+	padding-left: 20px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+QLabel#label_User,
+QLabel#label_Pass {
+	color: #5550c5;
+	font-size: 13px;
+	background: transparent;
+}
+
+QLineEdit {
+	background: #efefef;
+	color: #303090;
+	border: 1px solid #bdb7f5;
+	border-radius: 6px;
+	padding: 4px 10px;
+	font-size: 13px;
+	selection-background-color: #d7ebe5;
+}
+
+QLineEdit:focus {
+	border-color: #5f58cb;
+}
+
+QPushButton {
+	border-radius: 8px;
+	min-height: 38px;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+QPushButton#pushButton_OK {
+	color: #ffffff;
+	border: none;
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #5450c9, stop:1 #22a486);
+}
+
+QPushButton#pushButton_OK:hover {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #635ee0, stop:1 #28b997);
+}
+
+QPushButton#pushButton_Add {
+	color: #ffffff;
+	border: none;
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #249c86, stop:1 #4b47b9);
+}
+
+QPushButton#pushButton_Add:hover {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #28b997, stop:1 #635ee0);
+}
+
+QPushButton#pushButton_Cannel {
+	color: #5550c5;
+	background: #f3f3f3;
+	border: 1px solid #c8c0ff;
+}
+
+QPushButton#pushButton_Cannel:hover {
+	background: #e8e5f5;
+}
+
+QPushButton:disabled {
+	color: #9a98b8;
+	background: #e6e6e6;
+	border: 1px solid #d3d0ef;
+}
+
+QLabel#label_Status {
+	color: #5550c5;
+	background: transparent;
+	font-size: 13px;
+}
+</string>
+  </property>
+  <widget class="QFrame" name="frame_TitleBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_TitleBarText">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>0</y>
+      <width>180</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>用户登录</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Dot1">
+    <property name="geometry">
+     <rect>
+      <x>337</x>
+      <y>13</y>
+      <width>11</width>
+      <height>11</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: #ff9f75; border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Dot2">
+    <property name="geometry">
+     <rect>
+      <x>356</x>
+      <y>13</y>
+      <width>11</width>
+      <height>11</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: #f0c76d; border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Dot3">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>13</y>
+      <width>11</width>
+      <height>11</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: #b9e6cf; border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_Title">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>54</y>
+     <width>400</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>用户登录</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_Login">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>86</y>
+     <width>372</width>
+     <height>152</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_GroupLogin">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>372</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>账号登录</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_User">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>账号：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_User">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>248</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入账号</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Pass">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>96</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>密码：</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_PassWorld">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>96</y>
+      <width>248</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入密码</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_OK">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>252</y>
+     <width>114</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Add">
+   <property name="geometry">
+    <rect>
+     <x>143</x>
+     <y>252</y>
+     <width>114</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>新增</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Cannel">
+   <property name="geometry">
+    <rect>
+     <x>272</x>
+     <y>252</y>
+     <width>114</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Status">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>300</y>
+     <width>372</width>
+     <height>28</height>
+     </rect>
+   </property>
+   <property name="text">
+    <string>请输入账号和密码登录</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application"><UniqueIdentifier>{B2000001-0000-4000-8000-000000000001}</UniqueIdentifier></Filter>
+    <Filter Include="Authentication"><UniqueIdentifier>{B2000002-0000-4000-8000-000000000002}</UniqueIdentifier></Filter>
+    <Filter Include="Common"><UniqueIdentifier>{B2000003-0000-4000-8000-000000000003}</UniqueIdentifier></Filter>
+    <Filter Include="Protocols"><UniqueIdentifier>{B2000004-0000-4000-8000-000000000004}</UniqueIdentifier></Filter>
+    <Filter Include="Protocols\UDP"><UniqueIdentifier>{B2000005-0000-4000-8000-000000000005}</UniqueIdentifier></Filter>
+    <Filter Include="Protocols\TCP"><UniqueIdentifier>{B2000006-0000-4000-8000-000000000006}</UniqueIdentifier></Filter>
+    <Filter Include="Protocols\HTTP"><UniqueIdentifier>{B2000007-0000-4000-8000-000000000007}</UniqueIdentifier></Filter>
+    <Filter Include="Protocols\WebSocket"><UniqueIdentifier>{B2000008-0000-4000-8000-000000000008}</UniqueIdentifier></Filter>
+    <Filter Include="Protocols\Modbus"><UniqueIdentifier>{B2000009-0000-4000-8000-000000000009}</UniqueIdentifier></Filter>
+    <Filter Include="Resources"><UniqueIdentifier>{B2000010-0000-4000-8000-000000000010}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp"><Filter>Application</Filter></ClCompile>
+    <ClCompile Include="Application\DataReceiveServer.cpp"><Filter>Application</Filter></ClCompile>
+    <ClCompile Include="Authentication\UserLogin.cpp"><Filter>Authentication</Filter></ClCompile>
+    <ClCompile Include="Common\ProtocolFrameCodec.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="Common\FileMessageCodec.cpp"><Filter>Common</Filter></ClCompile>
+    <ClCompile Include="Protocols\UDP\UDPRecvServer.cpp"><Filter>Protocols\UDP</Filter></ClCompile>
+    <ClCompile Include="Protocols\TCP\TCPRecvServer.cpp"><Filter>Protocols\TCP</Filter></ClCompile>
+    <ClCompile Include="Protocols\HTTP\HTTPRecvServer.cpp"><Filter>Protocols\HTTP</Filter></ClCompile>
+    <ClCompile Include="Protocols\WebSocket\WSRecvServer.cpp"><Filter>Protocols\WebSocket</Filter></ClCompile>
+    <ClCompile Include="Protocols\Modbus\ModbusTcpServer.cpp"><Filter>Protocols\Modbus</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Application\DataReceiveServer.h"><Filter>Application</Filter></QtMoc>
+    <QtMoc Include="Authentication\UserLogin.h"><Filter>Authentication</Filter></QtMoc>
+    <QtMoc Include="Protocols\UDP\UDPRecvServer.h"><Filter>Protocols\UDP</Filter></QtMoc>
+    <QtMoc Include="Protocols\TCP\TCPRecvServer.h"><Filter>Protocols\TCP</Filter></QtMoc>
+    <QtMoc Include="Protocols\HTTP\HTTPRecvServer.h"><Filter>Protocols\HTTP</Filter></QtMoc>
+    <QtMoc Include="Protocols\WebSocket\WSRecvServer.h"><Filter>Protocols\WebSocket</Filter></QtMoc>
+    <QtMoc Include="Protocols\Modbus\ModbusTcpServer.h"><Filter>Protocols\Modbus</Filter></QtMoc>
+    <ClInclude Include="Common\AppTempDirectory.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="Common\ProtocolFrameCodec.h"><Filter>Common</Filter></ClInclude>
+    <ClInclude Include="Common\FileMessageCodec.h"><Filter>Common</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Application\DataReceiveServer.ui"><Filter>Application</Filter></QtUic>
+    <QtUic Include="Authentication\UserLogin.ui"><Filter>Authentication</Filter></QtUic>
+    <QtRcc Include="Resources\DataReceiveServer.qrc"><Filter>Resources</Filter></QtRcc>
+    <None Include="Resources\DataReceiveServer.ico"><Filter>Resources</Filter></None>
+    <None Include="Resources\DataReceiveServer.aps"><Filter>Resources</Filter></None>
+    <ResourceCompile Include="Resources\DataReceiveServer.rc"><Filter>Resources</Filter></ResourceCompile>
+  </ItemGroup>
+</Project>
